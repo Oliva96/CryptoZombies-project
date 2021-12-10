@@ -1,4 +1,5 @@
-pragma solidity ^0.4.25;
+//SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.10;
 
 import "./zombiehelper.sol";
 
@@ -7,8 +8,8 @@ contract ZombieAttack is ZombieHelper {
   uint attackVictoryProbability = 70;
 
   function randMod(uint _modulus) internal returns(uint) {
-    randNonce = randNonce.add(1);
-    return uint(keccak256(abi.encodePacked(now, msg.sender, randNonce))) % _modulus;
+    randNonce = randNonce++;
+    return uint(keccak256(abi.encodePacked(block.timestamp, msg.sender, randNonce))) % _modulus;
   }
 
   function attack(uint _zombieId, uint _targetId) external onlyOwnerOf(_zombieId) {
@@ -16,13 +17,13 @@ contract ZombieAttack is ZombieHelper {
     Zombie storage enemyZombie = zombies[_targetId];
     uint rand = randMod(100);
     if (rand <= attackVictoryProbability) {
-      myZombie.winCount = myZombie.winCount.add(1);
-      myZombie.level = myZombie.level.add(1);
-      enemyZombie.lossCount = enemyZombie.lossCount.add(1);
+      myZombie.winCount = myZombie.winCount++;
+      myZombie.level = myZombie.level++;
+      enemyZombie.lossCount = enemyZombie.lossCount++;
       feedAndMultiply(_zombieId, enemyZombie.dna, "zombie");
     } else {
-      myZombie.lossCount = myZombie.lossCount.add(1);
-      enemyZombie.winCount = enemyZombie.winCount.add(1);
+      myZombie.lossCount = myZombie.lossCount++;
+      enemyZombie.winCount = enemyZombie.winCount++;
       _triggerCooldown(myZombie);
     }
   }
