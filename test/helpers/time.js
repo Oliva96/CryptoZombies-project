@@ -15,7 +15,6 @@ async function increase(duration) {
         params: [],
         id: new Date().getTime()
     }, () => {});
-
 }
 
 const duration = {

@@ -1,0 +1,26 @@
+{
+  "name": "cryptozombies-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oliva96/CryptoZombies-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oliva96/CryptoZombies-project/issues"
+  },
+  "homepage": "https://github.com/Oliva96/CryptoZombies-project#readme",
+  "dependencies": {
+    "chai": "^4.3.4"
+  }
+}
