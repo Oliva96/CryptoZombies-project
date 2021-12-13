@@ -1,15 +1,15 @@
-const ZombieOwnership = artifacts.require("ZombieOwnership");
+const CryptoZombies = artifacts.require("CryptoZombies");
 const utils = require("./helpers/utils");
 const time = require("./helpers/time");
 var expect = require('chai').expect;
 
 const zombieNames = ["Zombie 1", "Zombie 2"];
 
-contract("ZombieOwnership", (accounts) => {
+contract("CryptoZombies", (accounts) => {
     let [alice, bob] = accounts;
     let contractInstance;
     beforeEach(async () => {
-        contractInstance = await ZombieOwnership.new();
+        contractInstance = await CryptoZombies.new();
     });
     it("should be able to create a new zombie", async () => {
         const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});

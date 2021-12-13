@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Oliva96/CryptoZombies-project#readme",
   "dependencies": {
-    "chai": "^4.3.4"
+    "chai": "^4.3.4",
+    "truffle-hdwallet-provider": "^1.0.6"
   }
 }
