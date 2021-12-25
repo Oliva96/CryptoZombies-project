@@ -1,4 +1,4 @@
 # CryptoZombies-project
-Este es el back-end de un juego de zombies NFT hecho siguiendo el tutorial de https://cryptozombies.io/, aunque el curso está realizado en una versión vieja de solidity en este repositorio está actualizado a la versión 0.8.10. 
+This is the back-end of an NFT zombie game made following the tutorial at https://cryptozombies.io/, although the course is done in an old version of solidity in this repository it is updated to version 0.8.10.
 
-Este proyecto fue construido y testeado usando truffle y Ganache 
+This project was built and tested using truffle and Ganache
